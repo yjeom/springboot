@@ -19,7 +19,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r yjeom-springboot-test
+  - zip -r yjeom-springboot-test *
   - mkdir -p deploy
   - mv yjeom-springboot-test.zip deploy/yjeom-springboot-test.zip
 
