@@ -18,6 +18,7 @@ public class IndexController {
 
     private final PostsService postsService;
     private final HttpSession httpSession;
+
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user){
 
@@ -30,13 +31,15 @@ public class IndexController {
     }
 
     @GetMapping("/posts/save")
-    public String postsSave(){
+    public String postsSave() {
         return "posts-save";
     }
+
     @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id,Model model){
-        PostsResponseDto dto=postsService.findById(id);
-        model.addAttribute("post",dto);
+    public String postsUpdate(@PathVariable Long id, Model model) {
+        PostsResponseDto dto = postsService.findById(id);
+        model.addAttribute("post", dto);
+
         return "posts-update";
     }
 
